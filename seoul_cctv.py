@@ -1,6 +1,10 @@
 import pandas as pd
 from tabulate import tabulate
 import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib
+
+matplotlib.rcParams['font.family'] = "NanumGothic"
 
 def seoul_population():
     seoul_pop_data = pd.read_excel("./data/seoul_population.xlsx", header=2, usecols="B,D,G,J,N") # 구, 전체인구, 한국인, 외국인, 고령자 칼럼만 가져오기
@@ -39,9 +43,21 @@ def seoul_cctv():
     
     return seoul_cctv_data
     
-seoul_merge = pd.merge(seoul_cctv(),seoul_population(), on='구별', how="left")
-cols_to_drop = seoul_merge.columns[seoul_merge.columns.get_loc("2015년 이전 설치된 CCTV "):seoul_merge.columns.get_loc("2021년 이전") + 1]
-seoul_data = seoul_merge.drop(columns=cols_to_drop)
+def org_data():
+    seoul_merge = pd.merge(seoul_cctv(),seoul_population(), on='구별', how="left") #cctv_df, population_df 합치기
+    cols_to_drop = seoul_merge.columns[seoul_merge.columns.get_loc("2015년 이전 설치된 CCTV "):seoul_merge.columns.get_loc("2022년 이후") + 1] # 필요없는 칼럼 저장
+    global seoul_data
+    seoul_data = seoul_merge.drop(columns=cols_to_drop) # 필요없는 칼럼 삭제
+    
+    seoul_data["CCTV비율"] = seoul_data["총 계"] / seoul_data["전체인구"] * 100
+    
+    return seoul_data
 
-print(tabulate(seoul_data, headers="keys", tablefmt="pretty"))
+def drawGraph():
+    seoul_data["총 계"].sort_values().plot(
+        kind="barh", grid=True, title="가장 CCTV가 많은 구", figsize=(10,6)
+    )
+    plt.savefig("CCTV_graph.png")
+org_data()
+drawGraph()
 
