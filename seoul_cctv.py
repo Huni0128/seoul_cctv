@@ -40,6 +40,8 @@ def seoul_cctv():
     return seoul_cctv_data
     
 seoul_merge = pd.merge(seoul_cctv(),seoul_population(), on='구별', how="left")
+cols_to_drop = seoul_merge.columns[seoul_merge.columns.get_loc("2015년 이전 설치된 CCTV "):seoul_merge.columns.get_loc("2021년 이전") + 1]
+seoul_data = seoul_merge.drop(columns=cols_to_drop)
 
-print(tabulate(seoul_merge, headers="keys", tablefmt="prettry"))
+print(tabulate(seoul_data, headers="keys", tablefmt="pretty"))
 
