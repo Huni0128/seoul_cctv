@@ -13,12 +13,12 @@
 - **인구 대비 CCTV 비율**: 인구수 대비 CCTV 설치 비율 계산
 - **시각화**: 산점도 및 경향선(Trend Line)을 활용한 데이터 시각화
 
-## 🛠️ STACK
-<img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white"/>
-<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>
-<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+## 🛠 STACK
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)  
+![VS Code](https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)  
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)  
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)  
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 ## 📊 분석 결과 예제
 ![구별 CCTV 데이터 시각화]([https://user-images.githubusercontent.com/12345678/abcdefg.png](https://private-user-images.githubusercontent.com/192555666/423212994-84c37d81-1619-4809-84d9-cd4ed8a375b6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDIxMjkwNzUsIm5iZiI6MTc0MjEyODc3NSwicGF0aCI6Ii8xOTI1NTU2NjYvNDIzMjEyOTk0LTg0YzM3ZDgxLTE2MTktNDgwOS04NGQ5LWNkNGVkOGEzNzViNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMxNlQxMjM5MzVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03ZDU0YjdhOWIzNGRiMzY3NTAwNDI2YjBhNjcxMTlhYjU1MjdlMjhmNjY1YzY0MmYyODJjNzQxY2I2NDAyM2VjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.1lcOXa0CU--Ow5f1ChO1PLOTRck4dNeOsXP7ucVltCc))
