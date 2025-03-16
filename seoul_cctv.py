@@ -50,6 +50,8 @@ def org_data():
     seoul_data = seoul_merge.drop(columns=cols_to_drop) # 필요없는 칼럼 삭제
     
     seoul_data["CCTV비율"] = seoul_data["총 계"] / seoul_data["전체인구"] * 100
+    seoul_data = seoul_data.set_index("구별")
+    print(seoul_data)
     
     return seoul_data
 
@@ -61,20 +63,16 @@ def drawGraph():
 def drawPlot():
     plt.figure(figsize=(10,6))
     plt.scatter(x=seoul_data["전체인구"], y=seoul_data["총 계"], label="CCTV 개수", color="blue")
-    line = np.polyfit(seoul_data["전체인구"], seoul_data["총 계"], 1)
+    line = np.polyfit(seoul_data["전체인구"], seoul_data["총 계"], 1) # 경향선을 위한 1차 함수 만들기
     trend_line = np.poly1d(line)
-    plt.plot(seoul_data["전체인구"], trend_line(seoul_data["전체인구"]), color="red", label="Trend Line")
+    plt.plot(seoul_data["전체인구"], trend_line(seoul_data["전체인구"]), color="red", label="Trend Line") # x축방향으로 경향선 그리기
 
     plt.title("인구 수에 따른 CCTV 개수")
     plt.xlabel("인구수")
     plt.ylabel("CCTV 개수")
     plt.legend()
     plt.grid(True)
-    plt.savefig("CCTV_plot.png", dpi=300, bbox_inches='tight')
-
-    plt.show()
-
-
+    plt.savefig("CCTV_plot.png")
 
 org_data()
 drawGraph()
