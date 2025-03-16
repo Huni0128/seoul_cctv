@@ -26,7 +26,7 @@ def seoul_population():
 
 def seoul_cctv():
     
-    seoul_cctv_data = pd.read_excel("./data/seoul_cctv_data.xlsx") # xlsx 파일 변수에 집어넣기
+    seoul_cctv_data = pd.read_excel("./data/seoul_cctv_data.xlsx", engine="openpyxl") # xlsx 파일 변수에 집어넣기
 
     seoul_cctv_data = seoul_cctv_data.drop(columns=["순번"]) # 순번칼럼 삭제
     seoul_cctv_data = seoul_cctv_data.drop(index=[0]) # 총합계 열 삭제
@@ -55,9 +55,28 @@ def org_data():
 
 def drawGraph():
     seoul_data["총 계"].sort_values().plot(
-        kind="barh", grid=True, title="가장 CCTV가 많은 구", figsize=(10,6)
-    )
+        kind="barh", grid=True, title="가장 CCTV가 많은 구", figsize=(10,6))
     plt.savefig("CCTV_graph.png")
+
+def drawPlot():
+    plt.figure(figsize=(10,6))
+    plt.scatter(x=seoul_data["전체인구"], y=seoul_data["총 계"], label="CCTV 개수", color="blue")
+    line = np.polyfit(seoul_data["전체인구"], seoul_data["총 계"], 1)
+    trend_line = np.poly1d(line)
+    plt.plot(seoul_data["전체인구"], trend_line(seoul_data["전체인구"]), color="red", label="Trend Line")
+
+    plt.title("인구 수에 따른 CCTV 개수")
+    plt.xlabel("인구수")
+    plt.ylabel("CCTV 개수")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig("CCTV_plot.png", dpi=300, bbox_inches='tight')
+
+    plt.show()
+
+
+
 org_data()
 drawGraph()
+drawPlot()
 
