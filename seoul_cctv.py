@@ -50,8 +50,7 @@ def org_data():
     seoul_data = seoul_merge.drop(columns=cols_to_drop) # 필요없는 칼럼 삭제
     
     seoul_data["CCTV비율"] = seoul_data["총 계"] / seoul_data["전체인구"] * 100
-    seoul_data = seoul_data.set_index("구별")
-    print(seoul_data)
+    seoul_data = seoul_data.set_index("구별") #기본 index가 이미지에 출력되서 변경
     
     return seoul_data
 
@@ -66,6 +65,10 @@ def drawPlot():
     line = np.polyfit(seoul_data["전체인구"], seoul_data["총 계"], 1) # 경향선을 위한 1차 함수 만들기
     trend_line = np.poly1d(line)
     plt.plot(seoul_data["전체인구"], trend_line(seoul_data["전체인구"]), color="red", label="Trend Line") # x축방향으로 경향선 그리기
+
+    for i, name in enumerate(seoul_data.index):
+        plt.annotate(name, (seoul_data["전체인구"].iloc[i], seoul_data["총 계"].iloc[i]),
+                     textcoords="offset points", xytext=(-10,5), ha="center", fontsize=9) #각 plot에 해당하는 구 이름 작성하기
 
     plt.title("인구 수에 따른 CCTV 개수")
     plt.xlabel("인구수")
