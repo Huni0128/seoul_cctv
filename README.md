@@ -1,6 +1,6 @@
 # 서울시 CCTV 데이터 분석
 
-[![Python](https://img.shields.io/badge/Python-3.12.3x-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.12.3-blue.svg)](https://www.python.org/)
 
 이 프로젝트는 **서울시 각 구별 CCTV 설치 현황**과 **인구 데이터**를 기반으로 CCTV 설치 비율과 인구수 간의 관계를 분석하는 내용입니다.
 
