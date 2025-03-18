@@ -32,11 +32,11 @@
 ### 예시 결과
 
 <div align="center">
-  <img src="images/CCTV_graph.png" alt="구별 CCTV 데이터 시각화" width="400"/>
+  <img src="images/CCTV_graph.png" alt="구별 CCTV 데이터 시각화" width="500"/>
   <br/>
   <em>구별 CCTV 데이터 시각화</em>
   <br/><br/>
-  <img src="images/CCTV_plot.png" alt="인구수에 따른 CCTV 개수" width="400"/>
+  <img src="images/CCTV_plot.png" alt="인구수에 따른 CCTV 개수" width="500"/>
   <br/>
   <em>인구수에 따른 CCTV 개수</em>
 </div>
